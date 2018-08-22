@@ -5,24 +5,34 @@ defmodule ExCakning.MixProject do
     [
       app: :ex_cakning,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
+      description: "API wrapper of cakning.com for Elixir.",
+      package: [
+        maintainers: ["Tamaki Maeda"],
+        licenses: ["MIT"],
+        links: %{
+          "Cakning" => "https://cakning.com/pusat-bantuan/dokumentasi-api"
+        }
+      ],
       deps: deps()
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger, :httpotion]
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
+      {:httpotion, "~> 3.1.0"},
+      {:jason, "~> 1.1"},
+      {:power_assert, "~> 0.1.1", only: :test},
+      {:mix_test_watch, "~> 0.5", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.0.0-rc.3", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.16", only: :dev, runtime: false}
     ]
   end
 end
