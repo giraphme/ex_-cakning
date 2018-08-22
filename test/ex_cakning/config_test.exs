@@ -25,7 +25,7 @@ defmodule ExCakning.CofnigTest do
 
     test "It should has base_url by default" do
       Application.put_env(:ex_cakning, :base_url, nil)
-      assert Config.base_url() === "https://api.cakning.com/"
+      assert Config.base_url() === "https://cakning.com/"
     end
   end
 
