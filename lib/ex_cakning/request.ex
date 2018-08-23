@@ -25,8 +25,7 @@ defmodule ExCakning.Request do
       |> Query.put_api_key()
       |> Query.encode()
 
-    __MODULE__
-    |> apply(method, ["#{url}?#{query_string}", ""])
+    request(method, ["#{url}?#{query_string}", ""])
     |> Response.cast()
   end
 

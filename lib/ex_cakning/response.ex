@@ -19,17 +19,15 @@ defmodule ExCakning.Response do
     {:error, message}
   end
 
-  # TODO: cast rows to Product struct
   defp cast_body(%{"rows" => rows, "total" => total}) when is_list(rows) do
     {:ok, %{total: total, rows: __MODULE__.Product.cast(rows)}}
   end
 
-  # TODO: check single product response and cast to struct
   defp cast_body(row) when is_map(row) do
     {:ok, %{total: 1, rows: __MODULE__.Product.cast(row)}}
   end
 
-  defp to_error(args \\ []) do
+  defp to_error(args) do
     {:error, struct(__MODULE__.Error, Enum.into(args, %{}))}
   end
 end
