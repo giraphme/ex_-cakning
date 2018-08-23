@@ -1,11 +1,11 @@
 # ExCakning
 
-**TODO: Add description**
+[API documentation of Cakning](https://cakning.com/pusat-bantuan/dokumentasi-api)  
+[hexdocs.pm](https://hexdocs.pm/ex_cakning)
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_cakning` to your list of dependencies in `mix.exs`:
+In your `mix.exs`
 
 ```elixir
 def deps do
@@ -15,7 +15,27 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/ex_cakning](https://hexdocs.pm/ex_cakning).
+In your `config/config.exs`
 
+```elixir
+config :ex_cakning, :api_key, "PUT YOUR API KEY"
+
+# OR
+
+config :ex_cakning, :api_key, {:system, "CAKNING_API_KEY"}
+```
+
+## Usage
+
+```elixir
+iex > ExCakning.products_all()
+{:ok, %ExCakning.Response{...}}
+iex > ExCakning.products()
+{:ok, %ExCakning.Response{...}}
+iex > ExCakning.product_detail(123)
+{:ok, %ExCakning.Response{...}}
+```
+
+## License
+
+This project is licensed under the terms of the MIT license, see LICENSE.
