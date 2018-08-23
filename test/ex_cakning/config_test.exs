@@ -5,7 +5,7 @@ defmodule ExCakning.CofnigTest do
   setup do
     on_exit(fn ->
       Application.put_env(:ex_cakning, :base_url, nil)
-      Application.put_env(:ex_cakning, :api_key, {:system, "EX_CAKNING_API_KEY"})
+      Application.put_env(:ex_cakning, :api_key, nil)
     end)
 
     :ok
