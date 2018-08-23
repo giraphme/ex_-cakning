@@ -20,7 +20,7 @@ In your `config/config.exs`
 ```elixir
 config :ex_cakning, :api_key, "PUT YOUR API KEY"
 
-# OR
+# OR
 
 config :ex_cakning, :api_key, {:system, "CAKNING_API_KEY"}
 ```
