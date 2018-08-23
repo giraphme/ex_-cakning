@@ -22,7 +22,7 @@ config :ex_cakning, :api_key, "PUT YOUR API KEY"
 
 # OR
 
-config :ex_cakning, :api_key, {:system, "CAKNING_API_KEY"}
+config :ex_cakning, :api_key, {:system, "CAKNING_API_KEY"}
 ```
 
 ## Usage
