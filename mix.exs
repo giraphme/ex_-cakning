@@ -21,13 +21,13 @@ defmodule ExCakning.MixProject do
 
   def application do
     [
-      extra_applications: [:logger, :httpotion]
+      extra_applications: [:logger, :httpoison]
     ]
   end
 
   defp deps do
     [
-      {:httpotion, "~> 3.1.0"},
+      {:httpoison, "~> 1.2"},
       {:jason, "~> 1.1"},
       {:power_assert, "~> 0.1.1", only: :test},
       {:mix_test_watch, "~> 0.5", only: :dev, runtime: false},
