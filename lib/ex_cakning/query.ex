@@ -4,7 +4,7 @@ defmodule ExCakning.Query do
   def put_api_key(params) when is_map(params) do
     params
     |> Enum.into(%{})
-    |> Map.merge(%{api_key: Config.api_key()})
+    |> Map.merge(%{token: Config.api_key()})
   end
 
   @spec encode(nil) :: nil
@@ -38,7 +38,7 @@ defmodule ExCakning.Query do
     end)
   end
 
-  defp encode_kv(key, value) when is_list(key), do: "#{encode_key(key)}=#{to_url_safe(value)}"
+  defp encode_kv(keys, value) when is_list(keys), do: "#{encode_key(keys)}=#{to_url_safe(value)}"
 
   defp encode_kv(key, value), do: "#{to_url_safe(key)}=#{to_url_safe(value)}"
 

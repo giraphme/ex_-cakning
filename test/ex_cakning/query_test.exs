@@ -4,7 +4,7 @@ defmodule ExCakning.QueryTest do
 
   describe "ExCakning.Query.put_api_key/1" do
     test "It sholuld change to string" do
-      assert Query.put_api_key(%{}) === %{api_key: Config.api_key()}
+      assert Query.put_api_key(%{}) === %{token: Config.api_key()}
     end
   end
 
